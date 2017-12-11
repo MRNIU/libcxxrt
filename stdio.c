@@ -71,7 +71,7 @@ static int open(const char *pathname,int flags,int mode){
 		"=m"(fd):"m"(pathname),"m"(flags),"m"(mode));
 }
 
-static iont read(int fd,void *buffer,unsigned size){
+static int read(int fd,void *buffer,unsigned size){
 	int ret=0;
 	asm("movl $3,%%eax	\n\t"
 		"movl %1,%%ebx	\n\t"
@@ -111,12 +111,12 @@ static int seek(int fd,int offest,int mode){
 		"movl %2,%%ecx	\n\t"
 		"movl %3,%%edx	\n\t"
 		"int $0x80		\n\t"
-		"movl %%eax,%0	\n\t"
+		"movl %%eax,%0	\n\t":
 		"=m"(ret):"m"(fd),"m"(offest),"m"(mode));
 	return ret;
 }
 
-FILE* fopen(const char *filename,const char *mode){
+FILE *fopen(const char *filename,const char *mode){
 	int fd=-1;
 	int flags=0;
 	int access=00700;//文件权限
@@ -152,6 +152,10 @@ int fwrite(const void* buffer,int size,int count,FILE *stream){
 }
 
 int fclose(FILE *fp){
+	return close((int)fp);
+}
+
+int fseek(FILE* fp,int offest,int set){
 	return seek((int)fp,offest,set);
 }
 

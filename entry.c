@@ -48,7 +48,10 @@ void mini_crt_entry(void){
 
 	char* ebp_reg=0;
 	//ebp_reg=%ebp
-	asm("movl %%ebp,%0 \n":"=r"(ebp_reg));
+	asm("movl %%ebp,%0    \n":"=r"(ebp_reg));
+	//ERROR!!!!!
+	//错误！！！不清楚原因
+
 
 	argc=*(int*)(ebp_reg+4);
 	argv=(char**)(ebp_reg+8);

@@ -12,3 +12,17 @@
 ### 支持 atexit() 函数
 ### 同时支持 Linux 和 Windows
 ### 仅包含基本实现，尽量简单
+
+## 使用方法
+### Linux
+
+	gcc -c -fno-builtin -nostdlib -fno-stack-protector entry.c malloc.c stdio.c string.c format.c 
+
+	ar -rs minicrt.a malloc.o format.o stdio.o string.o
+	
+
+
+### Windows
+
+	>cl /c /DWIN32 /GS- entry.c malloc.c stdio.c string.c format.c
+	>lib entry.obj malloc.obj stdio.obj string.obj format.obj /OUT:minicrt.lib

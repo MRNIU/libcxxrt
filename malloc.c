@@ -6,7 +6,7 @@
 
 #include "minicrt.h"
 
-typrdef struct _heap_header{
+typedef struct _heap_header{
 	enum{
 		HEAP_BLOCK_FREE=0xABABABAB,//magic number of free block
 		HEAP_BLOCK_USED=0xCDCDCDCD,//magic number of used block
@@ -18,7 +18,7 @@ typrdef struct _heap_header{
 } heap_header;
 
 #define ADDR_ADD(a,o) (((char*) (a)) +o)
-#define HEADER_SIZE(sizeof(heap_header))
+#define HEADER_SIZE (sizeof(heap_header))
 
 static heap_header* list_head=NULL;
 	
@@ -47,7 +47,7 @@ void* malloc(unsigned size){
 	if(size==0) return NULL;
 	header=list_head;
 	while(header!=0){
-		if(header->type=HEAP_BLOCK_USED){
+		if(header->type==HEAP_BLOCK_USED){
 			header=header->next;
 			continue;
 		}
@@ -92,7 +92,7 @@ void* malloc(unsigned size){
 #endif
 
 int mini_crt_heap_init(){
-	void* base=NILL;
+	void* base=NULL;
 	heap_header *header=NULL;
 	//32MB heap size;
 	unsigned heap_size=1024*1024*32;

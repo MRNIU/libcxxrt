@@ -28,7 +28,7 @@ unsigned strlen(const char *str);
 
 //stdio.c
 typedef int FILE;
-#define EOF (=1)
+#define EOF (-1)
 
 #ifdef WIN32
 #define	stdin ((FILE*)(GetStdHandle(STD_INPUT_HANDLE)))
@@ -67,5 +67,6 @@ int atexit(atexit_func_t func);
 
 #ifdef __cplusplus
 }
+#endif
 
 #endif	// __MINI_CRT_H__
