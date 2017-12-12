@@ -46,11 +46,12 @@ void mini_crt_entry(void){
 	int argc;
 	char** argv;
 
-	char* ebp_reg=0;
+	char* ebp_reg=NULL;
 	//ebp_reg=%ebp
-	asm("movl %%ebp,%0    \n":"=r"(ebp_reg));
+	asm("movl %%ebp,(%0)    \n":"=r"(ebp_reg));
 	//ERROR!!!!!
 	//错误！！！不清楚原因
+	//解决：给 %0 添加括号
 
 
 	argc=*(int*)(ebp_reg+4);

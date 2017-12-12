@@ -15,10 +15,10 @@ int fputs(const char *str,FILE *stream){
 	else return len;
 }
 
-#ifdef WIN32
+#ifndef WIN32
 #define va_list char*
 #define va_start(ap,arg) (ap=(va_list)&arg+sizeof(arg))
-#define va_arg(ap,t) (*t(t*) ((ap+=sizeof(t))-sizeof(t)))
+#define va_arg(ap,t) (*(t*) ((ap+=sizeof(t))-sizeof(t)))
 #define va_end(ap) (ap=(va_list)0)
 #else
 #include <Windows.h>
@@ -41,7 +41,7 @@ int vfprintf(FILE *stream,const char *format,va_list arglist){
 				if(translating){	//%d
 					char buf[16];
 					translating=0;
-					itoa(va_arg(arglist,int),buf,10);
+					itoa(va_arg(arglist, int),buf,10);
 					if(fputs(buf,stream)<0)	return EOF;
 					ret +=strlen(buf);
 				}
@@ -50,7 +50,7 @@ int vfprintf(FILE *stream,const char *format,va_list arglist){
 				break;
 			case 's':
 				if(translating){	//%s
-					const char *str=va_arg(arglist,const char*);
+					const char* str=va_arg(arglist,const char*);
 					translating=0;
 					if(fputs(str,stream)<0)	return EOF;
 					ret+=strlen(str);

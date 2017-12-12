@@ -2,6 +2,11 @@
 //  Copyright © 2017年 牛志宏. All rights reserved.
 //stdio.c
 
+
+#include "minicrt.h"
+
+
+
 int mini_crt_io_init(){
 	return 1;
 }
