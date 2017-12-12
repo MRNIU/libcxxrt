@@ -3,7 +3,7 @@
 //string.c
 
 char* itoa(int n,char* str,int radix){
-	char digit[]="0123456789ABCDEFGHIGKLMNOPQRSTUVWXYZ";
+	char digit[]="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char* p=str;
 	char* head=str;
 	if(!p||radix<2||radix>36)	return p;

@@ -16,7 +16,9 @@ extern "C"{
 
 void free(void *ptr);
 void *malloc(unsigned size);
-int mini_crt_init_heap();
+//int mini_crt_init_heap();
+//此处有bug，与 malloc.c 中函数不一样，更改
+int mini_crt_heap_init();
 
 
 //string.c

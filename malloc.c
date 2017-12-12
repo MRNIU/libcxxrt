@@ -103,12 +103,13 @@ int mini_crt_heap_init(){
 #else
 	base=(void*)brk(0);
 	void* end=ADDR_ADD(base,heap_size);
-	end=(void*)brk(end);;
+	end=(void*)brk(end);
 	if(!end)
 		return 0;
 #endif
 
 	header=(heap_header*)base;
+	
 	header->size=heap_size;
 	header->type=HEAP_BLOCK_FREE;
 	header->next=NULL;
