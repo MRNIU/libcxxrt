@@ -1,5 +1,5 @@
-//  Created by 牛志宏 on 2017/9/24.
-//  Copyright © 2017年 牛志宏. All rights reserved.
+//  Created by MRNIU on 2017/9/24.
+//  Copyright © 2017 MRNIU. All rights reserved.
 //string.c
 
 char* itoa(int n,char* str,int radix){

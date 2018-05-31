@@ -1,7 +1,7 @@
 //entyr.c
 //
-//Created by 牛志宏 on 2017/12/11.
-//Copyright © 2017年 牛志宏. All rights reserved.
+//  Created by MRNIU on 2017/9/24.
+//  Copyright © 2017 MRNIU. All rights reserved.
 
 #include "minicrt.h"
 
@@ -25,7 +25,7 @@ void mini_crt_entry(void){
 	int argc=0;
 	char* argv[16];
 	char* cl=GetCommandLineA();
-	
+
 	//解析命令行
 	argv[0]=cl;
 	argc++;

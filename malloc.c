@@ -1,5 +1,5 @@
-//  Created by 牛志宏 on 2017/12/11.
-//  Copyright © 2017年 牛志宏. All rights reserved.
+//  Created by MRNIU on 2017/9/24.
+//  Copyright © 2017 MRNIU. All rights reserved.
 
 //malloc.c
 
@@ -11,7 +11,7 @@ typedef struct _heap_header{
 		HEAP_BLOCK_FREE=0xABABABAB,//magic number of free block
 		HEAP_BLOCK_USED=0xCDCDCDCD,//magic number of used block
 		} type;
-		
+
 	unsigned size;
 	struct _heap_header* next;
 	struct _heap_header* prev;
@@ -21,7 +21,7 @@ typedef struct _heap_header{
 #define HEADER_SIZE (sizeof(heap_header))
 
 static heap_header* list_head=NULL;
-	
+
 void free(void* ptr){
 	heap_header* header=(heap_header*)ADDR_ADD(ptr,-HEADER_SIZE);
 	if(header->type!=HEAP_BLOCK_USED) return;
@@ -109,7 +109,7 @@ int mini_crt_heap_init(){
 #endif
 
 	header=(heap_header*)base;
-	
+
 	header->size=heap_size;
 	header->type=HEAP_BLOCK_FREE;
 	header->next=NULL;

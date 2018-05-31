@@ -18,28 +18,20 @@
 ### 编译源文件
 #### Linux
 
-	gcc -c -fno-builtin -nostdlib -fno-stack-protector entry.c malloc.c stdio.c string.c format.c 
+	gcc -c -fno-builtin -nostdlib -fno-stack-protector entry.c malloc.c stdio.c string.c format.c
 
 	ar -rs minicrt.a malloc.o format.o stdio.o string.o
-	
+
 #### Windows
 
 	>cl /c /DWIN32 /GS- entry.c malloc.c stdio.c string.c format.c
 	>lib entry.obj malloc.obj stdio.obj string.obj format.obj /OUT:minicrt.lib
-	
+
 ### 测试代码
 #### Linux
 
 	gcc -c -ggdb -fno-builtin -nostdlib -fno-stack-protector test.c
 	ld -static -e _mini_crt_entry entry.o test.o minicrt.a -o test
-	
+
 	//ld -static -e mini_crt_entry entry.o test.o minicrt.a -o test有问题
 	//	mini_crt_entry	_mini_crt_entry
-	
-	
-	
-	
-	
-	
-	
-	
