@@ -1,0 +1,7 @@
+
+# This file is a part of MRNIU/MiniCRT (https://github.com/MRNIU/MiniCRT).
+#
+# .gitinnore for MRNIU/MiniCRT.
+
+.DS_Store
+build

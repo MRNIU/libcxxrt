@@ -1,5 +1,7 @@
-# This is a mini CRT 
-来自程序员的自我修养——链接、装载与库
+
+# MiniCRT
+
+来自 程序员的自我修养——链接、装载与库
 
 ## 以 ANIS C 的标准库为目标，尽量做到与其接口一致
 
@@ -13,25 +15,18 @@
 ### 同时支持 Linux 和 Windows
 ### 仅包含基本实现，尽量简单
 
-## 使用方法
+## 使用方法 Usage
 
-### 编译源文件
-#### Linux
+```shell
+git clone https://github.com/MRNIU/MiniCRT.git
+cd MiniCRT
+mkdir build
+cmake ..
+```
 
-	gcc -c -fno-builtin -nostdlib -fno-stack-protector entry.c malloc.c stdio.c string.c format.c
+	构建完成后，库文件保存在 build/lib/libminicrt.a
+	测试程序为 build/bin/test
 
-	ar -rs minicrt.a malloc.o format.o stdio.o string.o
+## TODO
 
-#### Windows
-
-	>cl /c /DWIN32 /GS- entry.c malloc.c stdio.c string.c format.c
-	>lib entry.obj malloc.obj stdio.obj string.obj format.obj /OUT:minicrt.lib
-
-### 测试代码
-#### Linux
-
-	gcc -c -ggdb -fno-builtin -nostdlib -fno-stack-protector test.c
-	ld -static -e _mini_crt_entry entry.o test.o minicrt.a -o test
-
-	//ld -static -e mini_crt_entry entry.o test.o minicrt.a -o test有问题
-	//	mini_crt_entry	_mini_crt_entry
+C++ Run Time
