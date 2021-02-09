@@ -8,7 +8,10 @@
 extern "C" {
 #endif
 
-#include "minicrt.h"
+#include "stdarg.h"
+#include "stdint.h"
+#include "stdio.h"
+#include "string.h"
 
 int fputc(int c, FILE *stream) {
     int res = c;
@@ -25,27 +28,6 @@ int fputs(const char *str, FILE *stream) {
     }
     return len;
 }
-
-#ifdef WIN32
-#include <Windows.h>
-#elif defined(__i386__)
-typedef char *va_list;
-#define __va_SIZE(TYPE)                                                        \
-    (((sizeof(TYPE) + sizeof(int) - 1) / sizeof(int)) * sizeof(int))
-#define va_start(AP, LASTARG)                                                  \
-    (AP = ((va_list) & (LASTARG) + __va_SIZE(LASTARG)))
-#define va_arg(AP, TYPE)                                                       \
-    (AP += __va_SIZE(TYPE), *((TYPE *)(AP - __va_SIZE(TYPE))))
-#define va_end(AP) (AP = (va_list)0)
-
-#elif defined(__x86_64__)
-// TODO: 独立实现
-#define va_list __builtin_va_list
-#define va_arg(ap, type) __builtin_va_arg(ap, type)
-#define va_start(v, l) __builtin_va_start(v, l)
-#define va_end(v) __builtin_va_end(v)
-
-#endif
 
 // 判断字符是否数字字符
 #define is_digit(c) ((c) >= '0' && (c) <= '9')

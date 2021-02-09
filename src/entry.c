@@ -5,6 +5,9 @@
 // entry.c for MRNIU/MiniCRT.
 
 #include "minicrt.h"
+#include "stddef.h"
+#include "unistd.h"
+#include "stdio.h"
 
 #ifdef __cplusplus
 extern "C" {

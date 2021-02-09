@@ -4,7 +4,9 @@
 //
 // test.c for MRNIU/MiniCRT.
 
-#include "minicrt.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
 
 int main(int argc, char *argv[]) {
     char   buf[128] = {0};

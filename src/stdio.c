@@ -4,7 +4,9 @@
 //
 // stdio.c for MRNIU/MiniCRT.
 
-#include "minicrt.h"
+#include "stdio.h"
+#include "unistd.h"
+#include "string.h"
 
 int mini_crt_io_init() {
     return 0;

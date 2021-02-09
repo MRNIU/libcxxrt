@@ -8,7 +8,8 @@
 extern "C" {
 #endif
 
-#include "minicrt.h"
+#include "string.h"
+#include "stddef.h"
 
 // 获取字符串长度
 uint64_t strlen(const char *str) {

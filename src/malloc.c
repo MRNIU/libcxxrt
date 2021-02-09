@@ -5,6 +5,8 @@
 // malloc.c for MRNIU/MiniCRT.
 
 #include "minicrt.h"
+#include "stddef.h"
+#include "unistd.h"
 
 typedef struct heap_header {
     enum {
@@ -90,7 +92,6 @@ void *malloc(uint64_t size) {
 #ifdef WIN32
 #include <Windows.h>
 #else
-// Linux mmap system call
 static void *mmap(uint64_t len) {
     void *ret = NULL;
 #if defined(__i386__)
