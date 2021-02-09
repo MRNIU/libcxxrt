@@ -98,5 +98,5 @@ void exit(int exitCode) {
 }
 
 #ifdef __cplusplus
-};
+}
 #endif

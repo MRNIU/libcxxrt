@@ -4,6 +4,10 @@
 //
 // stdio.c for MRNIU/MiniCRT.
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "stdio.h"
 #include "unistd.h"
 #include "string.h"
@@ -201,5 +205,9 @@ int64_t fclose(FILE *fp) {
 int64_t fseek(FILE *fp, uint64_t offest, int set) {
     return seek((int)(long)fp, offest, set);
 }
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* WIN32 */

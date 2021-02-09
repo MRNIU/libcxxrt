@@ -8,6 +8,10 @@
 #include "stddef.h"
 #include "unistd.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct heap_header {
     enum {
         // magic number of free block
@@ -138,3 +142,7 @@ int32_t mini_crt_heap_init() {
     list_head->prev = NULL;
     return 0;
 }
+
+#ifdef __cplusplus
+}
+#endif
