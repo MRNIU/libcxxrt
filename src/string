@@ -1,0 +1,35 @@
+
+// This file is a part of MRNIU/MiniCRT
+// (https://github.com/MRNIU/MiniCRT).
+//
+// string for MRNIU/MiniCRT.
+
+#ifndef __STRING__
+#define __STRING__
+
+#include "stddef.h"
+#include "iostream"
+
+namespace std {
+    class string {
+    private:
+        size_t len;
+        char * pbuf;
+
+    protected:
+    public:
+        explicit string(const char *str);
+        string(const string &s);
+        ~string(void);
+        string &    operator=(const string &s);
+        string &    operator=(const char *s);
+        const char &operator[](size_t idx) const;
+        char &      operator[](size_t idx);
+        const char *c_str(void) const;
+        size_t      length(void) const;
+        size_t      size(void) const;
+    };
+    ofstream &operator<<(ofstream &o, const string &s);
+};
+
+#endif /* __STRING__ */

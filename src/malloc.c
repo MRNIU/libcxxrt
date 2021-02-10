@@ -4,13 +4,13 @@
 //
 // malloc.c for MRNIU/MiniCRT.
 
-#include "minicrt.h"
-#include "stddef.h"
-#include "unistd.h"
-
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#include "minicrt.h"
+#include "stddef.h"
+#include "unistd.h"
 
 typedef struct heap_header {
     enum {
@@ -46,7 +46,6 @@ void free(void *ptr) {
         header->prev->size += header->size;
         header = header->prev;
     }
-
     if (header->next != NULL && header->next->type == HEAP_BLOCK_FREE) {
         // merge
         header->size += header->next->size;

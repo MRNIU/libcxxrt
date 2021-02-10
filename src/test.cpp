@@ -7,13 +7,15 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
+#include "string"
+#include "iostream"
 
-int main(int argc, char *argv[]) {
+extern "C" int main(int argc, char *argv[]) {
     char   buf[128] = {0};
     FILE * fpw      = fopen("test.txt", "w");
-    char **v        = malloc(argc * sizeof(char *));
+    char **v        = (char **)malloc(argc * sizeof(char *));
     for (int i = 0; i < argc; i++) {
-        v[i] = malloc(strlen(argv[i]) + 1);
+        v[i] = (char *)malloc(strlen(argv[i]) + 1);
         strcpy(v[i], argv[i]);
     }
 
@@ -27,5 +29,12 @@ int main(int argc, char *argv[]) {
     fread(buf, len, 1, fpr);
     printf("%s\n", buf);
     fclose(fpr);
+
+    std::cout << "abcd" << std::endl;
+    std::cout << 233 << std::endl;
+    std::string msg("msg");
+    std::cout << msg << std::endl;
+    std::cout << msg.c_str() << std::endl;
+
     return 0;
 }

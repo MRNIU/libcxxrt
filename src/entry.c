@@ -80,7 +80,7 @@ void mini_crt_entry(void) {
     if (mini_crt_io_init() != 0) {
         crt_fatal_error("IO initialize failed");
     }
-
+    do_global_ctors();
     ret = main(argc, argv);
     exit(ret);
     return;

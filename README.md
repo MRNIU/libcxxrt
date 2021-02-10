@@ -2,12 +2,32 @@
 
 来自 程序员的自我修养——链接、装载与库
 
-简单 C 运行时库实现
-Simple C run time lib
+简单 C/C++ 运行时库实现
+Simple C/C++ run time lib
 
-## 支持 Suport
+## 支持 Support
 
-```C
+- x86
+
+    OSX
+
+    Manjaro
+
+    Ubuntu
+
+    WIN10
+
+- x64
+
+    OSX pass
+
+    Manjaro
+
+    Ubuntu
+
+    WIN10
+
+```c++
 // io
 FILE *  fopen(const char *filename, const char *mode);
 int64_t fread(void *buffer, uint64_t size, uint64_t count, FILE *stream);
@@ -29,6 +49,54 @@ void  free(void *ptr);
 void *malloc(size_t size);
 char *itoa(int n, char *str, int radix);
 int atexit(atexit_func_t func);
+// iostream
+// ofstream
+class ofstream {
+private:
+protected:
+    FILE *fp;
+    ofstream(const ofstream &lhs);
+
+public:
+    enum openmode : uint8_t {
+        in     = 1,
+        out    = 2,
+        binary = 4,
+        trunc  = 8,
+    };
+    ofstream(void);
+    explicit ofstream(const char *       filename,
+                      ofstream::openmode md = ofstream::out);
+    ~ofstream(void);
+    ofstream &operator<<(char c);
+    ofstream &operator<<(int n);
+    ofstream &operator<<(const char *lhs);
+    ofstream &operator<<(ofstream &(*)(ofstream &));
+
+    void open(const char *filename, ofstream::openmode md = ofstream::out);
+    void close(void);
+    ofstream &write(const char *buf, unsigned size);
+};
+
+// string
+class string {
+private:
+    size_t len;
+    char * pbuf;
+
+protected:
+public:
+    explicit string(const char *str);
+    string(const string &s);
+    ~string(void);
+    string &    operator=(const string &s);
+    string &    operator=(const char *s);
+    const char &operator[](size_t idx) const;
+    char &      operator[](size_t idx);
+    const char *c_str(void) const;
+    size_t      length(void) const;
+    size_t      size(void) const;
+};
 ```
 
 
