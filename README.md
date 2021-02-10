@@ -7,25 +7,14 @@ Simple C/C++ run time lib
 
 ## 支持 Support
 
-- x86
+|         | X86  | X64  | ARM  | AARCH64 |
+| :-----: | :--: | :--: | :--: | :-----: |
+|  WIN10  |  /   |      |      |         |
+|   OSX   |  /   |  ✅   |      |         |
+| Manjaro |  /   |      |      |         |
+| Ubuntu  |  /   |      |      |         |
 
-    OSX
 
-    Manjaro
-
-    Ubuntu
-
-    WIN10
-
-- x64
-
-    OSX pass
-
-    Manjaro
-
-    Ubuntu
-
-    WIN10
 
 ```c++
 // io
@@ -116,5 +105,5 @@ make
 
 ## TODO
 
-C++ run time
+多平台适配
 
