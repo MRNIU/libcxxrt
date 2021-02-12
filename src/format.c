@@ -12,6 +12,7 @@ extern "C" {
 #include "stdint.h"
 #include "stdio.h"
 #include "string.h"
+#include "port.h"
 
 int fputc(int c, FILE *stream) {
     int res = c;
@@ -353,7 +354,7 @@ int32_t vsprintf(char *buf, const char *fmt, va_list args) {
             // 表示用小写字母表示。
             case 'x': {
                 flags |= SMALL;
-                __attribute__((fallthrough));
+                FALLTHROUHT;
             }
             case 'X': {
                 str = number(str, va_arg(args, uint32_t), 16, field_width,
@@ -365,7 +366,7 @@ int32_t vsprintf(char *buf, const char *fmt, va_list args) {
             case 'd':
             case 'i': {
                 flags |= SIGN;
-                __attribute__((fallthrough));
+                FALLTHROUHT;
             }
             case 'u': {
                 str = number(str, va_arg(args, uint32_t), 10, field_width,

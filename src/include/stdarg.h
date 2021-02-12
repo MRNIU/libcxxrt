@@ -13,6 +13,7 @@ extern "C" {
 
 #ifdef WIN32
 #include <Windows.h>
+
 #elif defined(__i386__)
 typedef char *va_list;
 #define __va_SIZE(TYPE)                                                        \
