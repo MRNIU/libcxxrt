@@ -87,7 +87,7 @@ void mini_crt_entry(void) {
 }
 
 void exit(int exitCode) {
-mini_crt_call_exit_routine();
+    // mini_crt_call_exit_routine();
 #ifdef WIN32
     ExitProcess(exitCode);
 #elif defined(__i386__)

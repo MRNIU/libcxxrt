@@ -7,21 +7,18 @@
 message(STATUS "C compiler: ${CMAKE_C_COMPILER_ID}, version: ${CMAKE_C_COMPILER_VERSION}")
 message(STATUS "C++ compiler: ${CMAKE_CXX_COMPILER_ID}, version: ${CMAKE_CXX_COMPILER_VERSION}")
 
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m64")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -Wall -Wextra")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdlib -fno-builtin")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ffreestanding -fno-exceptions")
+
 if (CMAKE_C_COMPILER_ID STREQUAL "AppleClang")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m64")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -Wall -Wextra")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ffreestanding -nostdlib -fno-rtti -fno-builtin -fno-stack-protector -fno-exceptions")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CMAKE_C_FLAGS} -Wglobal-constructors")
-    add_link_options(-e _mini_crt_entry -lSystem -lc++)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CMAKE_C_FLAGS} -fno-rtti")
+    add_link_options(-e _mini_crt_entry -lSystem -nostartfiles)
 elseif (CMAKE_C_COMPILER_ID STREQUAL "GNU")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m64")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -Wall -Wextra")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ffreestanding -nostdlib -fno-builtin -fno-stack-protector -fno-exceptions")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdinc -nostartfiles")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ")
-    add_link_options(-e mini_crt_entry)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdinc")
+    add_link_options(-e mini_crt_entry -nostartfiles)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CMAKE_C_FLAGS} -fno-rtti -nostdinc++")
 endif ()
 
@@ -36,12 +33,10 @@ add_library(minicrt STATIC
     malloc.c
     stdio.c
     string.c
-    ctor.cpp
+    cxxabi.cpp
     new_delete.cpp
     string.cpp
-    iostream.cpp
-    atexit.c
-    __dso_handle.cpp)
+    iostream.cpp)
 
 add_executable(test 
         $<TARGET_OBJECTS:minicrt>

@@ -105,6 +105,7 @@ namespace std {
 #pragma clang diagnostic ignored "-Wglobal-constructors"
     stdout_stream cout;
 #pragma clang diagnostic pop
-#endif
+#elif __linux__
     stdout_stream cout;
+#endif
 };
