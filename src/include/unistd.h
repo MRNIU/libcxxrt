@@ -13,13 +13,27 @@ extern "C" {
 
 // linux 系统调用号
 #if __linux__
-#define SYSCALL_read 3
-#define SYSCALL_write 4
-#define SYSCALL_open 5
-#define SYSCALL_close 6
-#define SYSCALL_lseek 19
-#define SYSCALL_mmap 45
+#define SYSCALL_read 0
+#define SYSCALL_write 1
+#define SYSCALL_open 1
+#define SYSCALL_close 3
+#define SYSCALL_lseek 8
+#define SYSCALL_mmap 9
 #define SYSCALL_exit 60
+
+#define PROT_READ 0x1
+#define PROT_WRITE 0x2
+#define MAP_ANON 0x20
+#define MAP_PRIVATE 0x2
+#define MAP_FAILED ((void*)-1)
+
+#define O_RDONLY 00000000
+#define O_WRONLY 00000001
+#define O_RDWR 00000002
+#define O_ADDMODE 00000003
+#define O_CREAT 00000100
+#define O_TRUNC 00001000
+#define O_EXCL 00000200
 #endif
 
 #if __APPLE__

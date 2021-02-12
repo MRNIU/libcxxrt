@@ -12,12 +12,8 @@ if(${MiniCRT_SOURCE_DIR} STREQUAL ${MiniCRT_BINARY_DIR})
     message(FATAL_ERROR "In-source builds not allowed. Please make a new directory (called a build directory) and run CMake from there.")
 endif()
 
-set(CMAKE_C_COMPILER clang)
-set(CMAKE_CXX_COMPILER clang++)
-# set(CMAKE_C_COMPILER /usr/local/bin/gcc-10)
-# set(CMAKE_CXX_COMPILER /usr/local/bin/g++-10)
-# set(CMAKE_C_COMPILER /usr/local/bin/x86_64-elf-gcc)
-# set(CMAKE_CXX_COMPILER /usr/local/bin/x86_64-elf-g++)
+set(CMAKE_C_COMPILER gcc)
+set(CMAKE_CXX_COMPILER g++)
 
 # Set C gnu11
 set(CMAKE_C_STANDARD 11)

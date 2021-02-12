@@ -100,8 +100,11 @@ namespace std {
     }
 
 // 这里的警告实在消不掉，出此下策
+#if __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wglobal-constructors"
     stdout_stream cout;
 #pragma clang diagnostic pop
+#endif
+    stdout_stream cout;
 };
