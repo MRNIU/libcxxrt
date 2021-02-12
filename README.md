@@ -10,8 +10,8 @@ Simple C/C++ run time lib
 |         | X86  | X64  | ARM  | AARCH64 |
 | :-----: | :--: | :--: | :--: | :-----: |
 |  WIN10  |  /   |      |      |         |
-|   OSX   |  /   |  ✅   |      |         |
-| Manjaro |  /   |      |      |         |
+|   OSX   |  /   |  ✅  |      |         |
+| Manjaro |  /   |  ✅  |      |         |
 | Ubuntu  |  /   |      |      |         |
 
 

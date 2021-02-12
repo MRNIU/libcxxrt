@@ -8,7 +8,7 @@ message(STATUS "C compiler: ${CMAKE_C_COMPILER_ID}, version: ${CMAKE_C_COMPILER_
 message(STATUS "C++ compiler: ${CMAKE_CXX_COMPILER_ID}, version: ${CMAKE_CXX_COMPILER_VERSION}")
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m64")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -Wall -Wextra")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -Wall -Wextra -g -ggdb")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdlib -fno-builtin")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ffreestanding -fno-exceptions")
 

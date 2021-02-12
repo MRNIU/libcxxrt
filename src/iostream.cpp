@@ -90,8 +90,7 @@ namespace std {
         return;
     }
 
-    stdout_stream::stdout_stream(const stdout_stream &s) {
-        *this = s;
+    stdout_stream::stdout_stream(const stdout_stream &) : ofstream() {
         return;
     }
 

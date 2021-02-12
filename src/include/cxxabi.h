@@ -38,9 +38,9 @@ extern const Initializer
     inits_end __asm__("section$end$__DATA$__mod_init_func");
 #elif __linux__
 typedef void (*constructor_func)();
-extern "C" constructor_func ctors_start[1]
+constructor_func ctors_start[1]
     __attribute__((section(".ctors"))) = {(constructor_func)-1};
-extern "C" constructor_func ctors_end[1]
+constructor_func ctors_end[1]
     __attribute__((section(".ctors"))) = {(constructor_func)-1};
 #endif
 

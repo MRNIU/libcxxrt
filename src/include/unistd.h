@@ -15,7 +15,7 @@ extern "C" {
 #if __linux__
 #define SYSCALL_read 0
 #define SYSCALL_write 1
-#define SYSCALL_open 1
+#define SYSCALL_open 2
 #define SYSCALL_close 3
 #define SYSCALL_lseek 8
 #define SYSCALL_mmap 9

@@ -14,13 +14,25 @@ void *operator new[](size_t size) {
     return malloc(size);
 }
 
-void operator delete(void *p) noexcept {
+void operator delete(void *p) {
     if (p != NULL) {
         free(p);
     }
 }
 
-void operator delete[](void *p) noexcept {
+void operator delete[](void *p) {
+    if (p != NULL) {
+        free(p);
+    }
+}
+
+void operator delete(void *p, size_t size __attribute__((unused))) noexcept {
+    if (p != NULL) {
+        free(p);
+    }
+}
+
+void operator delete[](void *p, size_t size __attribute__((unused))) noexcept {
     if (p != NULL) {
         free(p);
     }
