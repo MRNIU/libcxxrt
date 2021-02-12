@@ -5,7 +5,20 @@
 // cxxabi.cpp for MRNIU/MiniCRT.
 
 #include "cxxabi.h"
+#include "stddef.h"
 
+#ifdef WIN32
+extern "C" void do_global_ctors(void) {
+    init_func *p = ctors_begin;
+    while (p < ctors_end) {
+        if (*p != NULL) {
+            (**p)();
+        }
+        p++;
+    }
+    return;
+}
+#else
 atexit_func_entry_t __atexit_funcs[ATEXIT_MAX_FUNCS];
 uarch_t             __atexit_func_count = 0;
 
@@ -83,18 +96,7 @@ namespace __cxxabiv1 {
 
 void *__gxx_personality_v0 = (void *)0xDEADBEAF;
 
-#ifdef WIN32
-extern "C" void do_global_ctors(void) {
-    init_func *p = ctors_begin;
-    while (p < ctors_end) {
-        if (*p != NULL) {
-            (**p)();
-        }
-        p++;
-    }
-    return;
-}
-#elif __clang__
+#if __clang__
 extern "C" void do_global_ctors(void) {
     const Initializer *p;
     for (p = &inits_start; p < &inits_end; ++p) {
@@ -113,21 +115,4 @@ extern "C" void do_global_ctors(void) {
 }
 #endif
 
-// void mini_crt_call_exit_routine(void) {
-//     func_node_t *p = atexit_list;
-//     while (p != NULL) {
-// #ifdef WIN32
-//         p->func();
-// #else
-//         if (p->is_cxa) {
-//             ((cxa_func_t)p->func)(p->arg);
-//         }
-//         else {
-//             p->func();
-//         }
-//         p = p->next;
-// #endif
-//     }
-//     atexit_list = NULL;
-//     return;
-// }
+#endif

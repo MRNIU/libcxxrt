@@ -29,21 +29,7 @@ typedef void (*init_func)(void);
 #pragma section(".CRT$XCZ", long, read)
 __declspec(allocate(".CRT$XCA")) init_func ctors_begin[] = {0};
 __declspec(allocate(".CRT$XCZ")) init_func ctors_end[]   = {0};
-#elif __clang__
-typedef void (*Initializer)(int argc, const char *argv[], const char *envp[],
-                            const char *apple[]);
-extern const Initializer
-    inits_start __asm__("section$start$__DATA$__mod_init_func");
-extern const Initializer
-    inits_end __asm__("section$end$__DATA$__mod_init_func");
-#elif __linux__
-typedef void (*constructor_func)();
-constructor_func ctors_start[1]
-    __attribute__((section(".ctors"))) = {(constructor_func)-1};
-constructor_func ctors_end[1]
-    __attribute__((section(".ctors"))) = {(constructor_func)-1};
-#endif
-
+#else
 int  __cxa_atexit(void (*f)(void *), void *objptr, void *dso);
 void __cxa_finalize(void *f);
 void __cxa_pure_virtual();
@@ -63,6 +49,22 @@ namespace __cxxabiv1 {
 }
 
 void __cxa_finalize(void *f);
+#endif
+
+#if __clang__
+typedef void (*Initializer)(int argc, const char *argv[], const char *envp[],
+                            const char *apple[]);
+extern const Initializer
+    inits_start __asm__("section$start$__DATA$__mod_init_func");
+extern const Initializer
+    inits_end __asm__("section$end$__DATA$__mod_init_func");
+#elif __linux__
+typedef void (*constructor_func)();
+constructor_func ctors_start[1]
+    __attribute__((section(".ctors"))) = {(constructor_func)-1};
+constructor_func ctors_end[1]
+    __attribute__((section(".ctors"))) = {(constructor_func)-1};
+#endif
 
 #ifdef __cplusplus
 }

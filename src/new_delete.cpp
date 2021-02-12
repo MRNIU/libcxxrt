@@ -5,6 +5,7 @@
 // new_delete.cpp for MRNIU/MiniCRT.
 
 #include "stdlib.h"
+#include "port.h"
 
 void *operator new(size_t size) {
     return malloc(size);
@@ -26,13 +27,13 @@ void operator delete[](void *p) {
     }
 }
 
-void operator delete(void *p, size_t size __attribute__((unused))) noexcept {
+void operator delete(void *p, size_t UNUSED(size)) {
     if (p != NULL) {
         free(p);
     }
 }
 
-void operator delete[](void *p, size_t size __attribute__((unused))) noexcept {
+void operator delete[](void *p, size_t UNUSED(size)) {
     if (p != NULL) {
         free(p);
     }
