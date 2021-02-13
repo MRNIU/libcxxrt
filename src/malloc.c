@@ -103,7 +103,7 @@ static void *mmap(uint64_t len) {
     int64_t  fd   = -1;
     uint64_t off  = 0;
 #if defined(__i386__)
-asm("__syscall6:\n"
+    asm("__syscall6:\n"
         "	pushl %ebp\n"
         "	pushl %edi\n"
         "	pushl %esi\n"
@@ -128,7 +128,7 @@ asm("__syscall6:\n"
         return __syscall6(call, a, b, c, d, e, f);
     }
 
-  ret=  (void*)syscall6(SYSCALL_mmap, (long)addr,len,prot,flag,fd,off);
+    ret = (void *)syscall6(SYSCALL_mmap, (long)addr, len, prot, flag, fd, off);
 
 #elif defined(__x86_64__)
     register int64_t  r10 __asm__("r10") = flag;

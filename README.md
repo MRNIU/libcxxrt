@@ -3,14 +3,14 @@
 来自 程序员的自我修养——链接、装载与库
 
 简单 C/C++ 运行时库实现
-Simple C/C++ run time lib
+Simple C/C++ run time implementation
 
 ## 支持 Support
 
 |         | X86  | X64  | ARM  | AARCH64 |
 | :-----: | :--: | :--: | :--: | :-----: |
 |  WIN10  |    |      |      |         |
-|   OSX   |  N/A  |  ✅  |      |         |
+|   OSX   |    |  ✅  |      |         |
 | Manjaro |     |  ✅  |      |         |
 | Ubuntu  |     | ✅ |      |         |
 
@@ -95,9 +95,7 @@ public:
 git clone https://github.com/MRNIU/MiniCRT.git
 cd MiniCRT
 mkdir build
-# ARCH: 32, 64
-# CMAKE_BUILD_TYPE: DEBUG, RELEASE
-cmake -DARCH=64 -DCMAKE_BUILD_TYPE=RELEASE ..
+cmake ..
 make
 ```
 

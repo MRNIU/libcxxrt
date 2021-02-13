@@ -14,7 +14,7 @@ if (CMAKE_C_COMPILER_ID STREQUAL "MSVC")
     add_link_options(/ENTRY:mini_crt_entry /NODEFAULTLIB)
 
 else ()
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m${ARCH}")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m64")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -Wall -Wextra -g -ggdb")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdlib -fno-builtin")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ffreestanding -fno-exceptions")
