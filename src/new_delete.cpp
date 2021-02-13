@@ -7,11 +7,11 @@
 #include "stdlib.h"
 #include "port.h"
 
-void *operator new(unsigned long size) {
+void *operator new(size_t size) {
     return malloc(size);
 }
 
-void *operator new[](unsigned long size) {
+void *operator new[](size_t size) {
     return malloc(size);
 }
 
