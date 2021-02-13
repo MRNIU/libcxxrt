@@ -80,13 +80,17 @@ int fseek(FILE *fp, int offest, int set) {
 static int64_t read(int fd, void *buffer, uint64_t size) {
     int64_t ret = 0;
 #if defined(__i386__)
-    __asm__ __volatile__("mov $3,%%rax	\n\t"
-                         "mov %1,%%rbx	\n\t"
-                         "mov %2,%%rcx	\n\t"
-                         "mov %3,%%rdx	\n\t"
-                         "int $0x80		\n\t"
+    // __asm__ __volatile__("mov $3,%%eax	\n\t"
+    //                      "mov %1,%%ebx	\n\t"
+    //                      "mov %2,%%ecx	\n\t"
+    //                      "mov %3,%%edx	\n\t"
+    //                      "int $0x80		\n\t"
+    //                      : "=m"(ret)
+    //                      : "m"(fd), "m"(buffer), "m"(size));
+    __asm__ __volatile__("int $0x80"
                          : "=m"(ret)
-                         : "m"(fd), "m"(buffer), "m"(size));
+                         : "a"(SYSCALL_read), "b"(fd), "c"(buffer),
+                           "d"((uint32_t)size));
 #elif defined(__x86_64__)
     __asm__ __volatile__("syscall"
                          : "=a"(ret)
@@ -98,14 +102,18 @@ static int64_t read(int fd, void *buffer, uint64_t size) {
 static int64_t write(int fd, const void *buffer, uint64_t size) {
     int64_t ret = 0;
 #if defined(__i386__)
-    __asm__ __volatile__("mov $4,%%rax	\n\t"
-                         "mov %1,%%rbx	\n\t"
-                         "mov %2,%%rcx	\n\t"
-                         "mov %3,%%rdx	\n\t"
-                         "int $0x80		\n\t"
-                         "mov %%rax,%0	\n\t"
+    // __asm__ __volatile__("mov $4,%%eax	\n\t"
+    //                      "mov %1,%%ebx	\n\t"
+    //                      "mov %2,%%ecx	\n\t"
+    //                      "mov %3,%%edx	\n\t"
+    //                      "int $0x80		\n\t"
+    //                      "mov %%eax,%0	\n\t"
+    //                      : "=m"(ret)
+    //                      : "m"(fd), "m"(buffer), "m"(size));
+    __asm__ __volatile__("int $0x80"
                          : "=m"(ret)
-                         : "m"(fd), "m"(buffer), "m"(size));
+                         : "a"(SYSCALL_write), "b"(fd), "c"(buffer),
+                           "d"((uint32_t)size));
 #elif defined(__x86_64__)
     __asm__ __volatile__("syscall"
                          : "=a"(ret)
@@ -117,13 +125,17 @@ static int64_t write(int fd, const void *buffer, uint64_t size) {
 static int64_t open(const char *pathname, int flags, int mode) {
     int fd = 0;
 #if defined(__i386__)
-    __asm__ __volatile__("mov $5,%%rax	\n\t"
-                         "mov %1,%%rbx	\n\t"
-                         "mov %2,%%rcx	\n\t"
-                         "mov %3,%%rdx	\n\t"
-                         "int $0x80		\n\t"
+    // __asm__ __volatile__("mov $5,%%eax	\n\t"
+    //                      "mov %1,%%ebx	\n\t"
+    //                      "mov %2,%%ecx	\n\t"
+    //                      "mov %3,%%edx	\n\t"
+    //                      "int $0x80		\n\t"
+    //                      : "=m"(fd)
+    //                      : "m"(pathname), "m"(flags), "m"(mode));
+    __asm__ __volatile__("int $0x80"
                          : "=m"(fd)
-                         : "m"(pathname), "m"(flags), "m"(mode));
+                         : "a"(SYSCALL_open), "b"(pathname), "c"(flags),
+                           "d"(mode));
 #elif defined(__x86_64__)
     __asm__ __volatile__("syscall"
                          : "=a"(fd)
@@ -136,10 +148,10 @@ static int64_t open(const char *pathname, int flags, int mode) {
 static int64_t close(int fd) {
     int64_t ret = 0;
 #if defined(__i386__)
-    __asm__ __volatile__("mov $6,%%rax	\n\t"
-                         "mov %1,%%rbx	\n\t"
+    __asm__ __volatile__("mov $6,%%eax	\n\t"
+                         "mov %1,%%ebx	\n\t"
                          "int $0x80		\n\t"
-                         "mov %%rax,%0	\n\t"
+                         "mov %%eax,%0	\n\t"
                          : "=m"(ret)
                          : "m"(fd));
 #elif defined(__x86_64__)
@@ -151,14 +163,18 @@ static int64_t close(int fd) {
 static int64_t seek(int fd, uint64_t offest, int mode) {
     int64_t ret = 0;
 #if defined(__i386__)
-    __asm__ __volatile__("mov $19,%%rax	\n\t"
-                         "mov %1,%%rbx	\n\t"
-                         "mov %2,%%rcx	\n\t"
-                         "mov %3,%%rdx	\n\t"
-                         "int $0x80		\n\t"
-                         "mov %%rax,%0	\n\t"
+    // __asm__ __volatile__("mov $19,%%eax	\n\t"
+    //                      "mov %1,%%ebx	\n\t"
+    //                      "mov %2,%%ecx	\n\t"
+    //                      "mov %3,%%edx	\n\t"
+    //                      "int $0x80		\n\t"
+    //                      "mov %%eax,%0	\n\t"
+    //                      : "=m"(ret)
+    //                      : "m"(fd), "m"(offest), "m"(mode));
+    __asm__ __volatile__("int $0x80"
                          : "=m"(ret)
-                         : "m"(fd), "m"(offest), "m"(mode));
+                         : "a"(SYSCALL_lseek), "b"(fd), "c"((uint32_t)offest),
+                           "d"(mode));
 #elif defined(__x86_64__)
     __asm__ __volatile__("syscall"
                          : "=a"(ret)

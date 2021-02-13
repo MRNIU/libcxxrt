@@ -96,15 +96,55 @@ void *malloc(uint64_t size) {
 #include <Windows.h>
 #else
 static void *mmap(uint64_t len) {
-    void *ret = NULL;
+    void *   ret  = NULL;
+    void *   addr = NULL;
+    int64_t  prot = PROT_READ | PROT_WRITE;
+    int64_t  flag = MAP_ANON | MAP_PRIVATE;
+    int64_t  fd   = -1;
+    uint64_t off  = 0;
 #if defined(__i386__)
+    // TODO
+    // extern long __syscall6(long n, long a, long b, long c, long d, long e,
+    //                        long f);
+    // asm("__syscall6:\n"
+    //     "	pushl %ebp\n"
+    //     "	pushl %edi\n"
+    //     "	pushl %esi\n"
+    //     "	pushl %ebx\n"
+    //     "	movl  (0+5)*4(%esp),%eax\n"
+    //     "	movl  (1+5)*4(%esp),%ebx\n"
+    //     "	movl  (2+5)*4(%esp),%ecx\n"
+    //     "	movl  (3+5)*4(%esp),%edx\n"
+    //     "	movl  (4+5)*4(%esp),%esi\n"
+    //     "	movl  (5+5)*4(%esp),%edi\n"
+    //     "	movl  (6+5)*4(%esp),%ebp\n"
+    //     "	int $0x80\n"
+    //     "	popl %ebx\n"
+    //     "	popl %esi\n"
+    //     "	popl %edi\n"
+    //     "	popl %ebp\n"
+    //     "	ret");
+    // uint32_t linux_syscall6(int syscall_number, uint32_t arg1, uint32_t arg2,
+    //                         uint32_t arg3, uint32_t arg4, uint32_t arg5,
+    //                         uint32_t arg6);
+    // uint32_t args[2] = {arg1, arg6};
+    // __asm__ __volatile__("push %%ebp\n"
+    //                      "movl 4(%%ebx), %%ebp\n" /* arg6 */
+    //                      "movl 0(%%ebx), %%ebx\n" /* arg1 */
+    //                      "int $0x80\n"
+    //                      "pop %%ebp\n"
+    //                      : "=a"(ret)
+    //                      : "a"(syscall_number), "b"(&args), "c"(arg2),
+    //                        "d"(arg3), "S"(arg4), "D"(arg5)
+    //                      : "ebx", "memory");
+    // int32_t args[] = {};
+    // __asm__ __volatile__("int $0x80"
+    //                      : "=a"(ret)
+    //                      : "a"(SYSCALL_mmap), "b"(addr), "c"(len), "d"(prot),
+    //                        "S"(r10), "D"(r8)
+    //                      : "ebx", "memory");
 
 #elif defined(__x86_64__)
-    void *            addr               = NULL;
-    int64_t           prot               = PROT_READ | PROT_WRITE;
-    int64_t           flag               = MAP_ANON | MAP_PRIVATE;
-    int64_t           fd                 = -1;
-    uint64_t          off                = 0;
     register int64_t  r10 __asm__("r10") = flag;
     register int64_t  r8 __asm__("r8")   = fd;
     register uint64_t r9 __asm__("r9")   = off;

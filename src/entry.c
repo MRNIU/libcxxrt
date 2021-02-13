@@ -68,14 +68,14 @@ void mini_crt_entry(void) {
     long argcL = 0;
     long argvL = 0;
     __asm__ __volatile__("mov %%rdi, %0" : "=r"(argcL));
-      __asm__ __volatile__("mov %%rsi, %0" : "=r"(argvL));
+    __asm__ __volatile__("mov %%rsi, %0" : "=r"(argvL));
     argc = (int)argcL;
     argv = (char **)argvL;
 #elif __linux__
-    char * rbp_reg=NULL;
-        __asm__ __volatile__("mov %%rbp, %0":"=r"(rbp_reg));
-    argc=*(long*)(rbp_reg+8);
-    argv=(char**)(rbp_reg+16);
+    char *rbp_reg = NULL;
+    __asm__ __volatile__("mov %%rbp, %0" : "=r"(rbp_reg));
+    argc = *(long *)(rbp_reg + 8);
+    argv = (char **)(rbp_reg + 16);
 #endif
 #endif
 #endif
@@ -98,7 +98,7 @@ void exit(int exitCode) {
 #ifdef WIN32
     ExitProcess(exitCode);
 #elif defined(__i386__)
-    __asm__ __volatile__("int $80" : : "0"(SYSCALL_exit), "b"(exitCode));
+    __asm__ __volatile__("int $80" : : "a"(SYSCALL_exit), "b"(exitCode));
 #elif defined(__x86_64__)
     __asm__ __volatile__("syscall" : : "a"(SYSCALL_exit), "D"(exitCode));
 #endif

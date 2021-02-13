@@ -10,7 +10,7 @@ Simple C/C++ run time lib
 |         | X86  | X64  | ARM  | AARCH64 |
 | :-----: | :--: | :--: | :--: | :-----: |
 |  WIN10  |    |      |      |         |
-|   OSX   |     |  ✅  |      |         |
+|   OSX   |  N/A  |  ✅  |      |         |
 | Manjaro |     |  ✅  |      |         |
 | Ubuntu  |     | ✅ |      |         |
 
@@ -95,13 +95,14 @@ public:
 git clone https://github.com/MRNIU/MiniCRT.git
 cd MiniCRT
 mkdir build
-cmake ..
+# ARCH: 32, 64
+# CMAKE_BUILD_TYPE: DEBUG, RELEASE
+cmake -DARCH=64 -DCMAKE_BUILD_TYPE=RELEASE ..
 make
 ```
 
 构建完成后，库文件保存在 build/lib/libminicrt.a
 测试程序为 build/bin/test
-
 
 ## TODO
 
