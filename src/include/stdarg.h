@@ -1,8 +1,18 @@
 
-// This file is a part of MRNIU/MiniCRT
-// (https://github.com/MRNIU/MiniCRT).
-//
-// stdarg.h for MRNIU/MiniCRT.
+/**
+ * @file stdarg.h
+ * @brief stdarg header
+ * @author Zone.N (Zone.Niuzh@hotmail.com)
+ * @version 1.0
+ * @date 2023-09-07
+ * @copyright MIT LICENSE
+ * https://github.com/MRNIU/libcxxrt
+ * @par change log:
+ * <table>
+ * <tr><th>Date<th>Author<th>Description
+ * <tr><td>2023-09-07<td>Zone.N<td>迁移到 doxygen
+ * </table>
+ */
 
 #ifndef __STDARG_H__
 #define __STDARG_H__

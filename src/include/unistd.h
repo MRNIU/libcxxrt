@@ -1,8 +1,18 @@
 
-// This file is a part of MRNIU/MiniCRT
-// (https://github.com/MRNIU/MiniCRT).
-//
-// unistd.h for MRNIU/MiniCRT.
+/**
+ * @file unistd.h
+ * @brief unistd header
+ * @author Zone.N (Zone.Niuzh@hotmail.com)
+ * @version 1.0
+ * @date 2023-09-07
+ * @copyright MIT LICENSE
+ * https://github.com/MRNIU/libcxxrt
+ * @par change log:
+ * <table>
+ * <tr><th>Date<th>Author<th>Description
+ * <tr><td>2023-09-07<td>Zone.N<td>迁移到 doxygen
+ * </table>
+ */
 
 #ifndef __UNISTD_H__
 #define __UNISTD_H__
