@@ -1,14 +1,14 @@
 <map id="/home/runner/work/libcxxrt/libcxxrt/src/include/stdint.h" name="/home/runner/work/libcxxrt/libcxxrt/src/include/stdint.h">
-<area shape="rect" id="node1" title=" " alt="" coords="627,5,830,47"/>
-<area shape="rect" id="node2" href="$format_8c.html" title=" " alt="" coords="451,184,649,225"/>
-<area shape="rect" id="node3" href="$minicrt_8h.html" title=" " alt="" coords="222,95,433,136"/>
-<area shape="rect" id="node6" href="$stdio_8h.html" title=" " alt="" coords="629,95,828,136"/>
-<area shape="rect" id="node9" href="$string_8h.html" title=" " alt="" coords="894,95,1097,136"/>
-<area shape="rect" id="node12" href="$string_8cpp.html" title=" " alt="" coords="1564,184,1763,225"/>
-<area shape="rect" id="node4" href="$entry_8c.html" title=" " alt="" coords="228,184,427,225"/>
-<area shape="rect" id="node5" href="$malloc_8c.html" title=" " alt="" coords="5,184,204,225"/>
+<area shape="rect" id="node1" title="stdint header" alt="" coords="627,5,830,47"/>
+<area shape="rect" id="node2" href="$format_8c.html" title="format c" alt="" coords="451,184,649,225"/>
+<area shape="rect" id="node3" href="$libcxxrt_8h.html" title=" " alt="" coords="220,95,435,136"/>
+<area shape="rect" id="node6" href="$stdio_8h.html" title="stdio header" alt="" coords="629,95,828,136"/>
+<area shape="rect" id="node9" href="$string_8h.html" title="string header" alt="" coords="894,95,1097,136"/>
+<area shape="rect" id="node12" href="$string_8cpp.html" title="string cpp" alt="" coords="1564,184,1763,225"/>
+<area shape="rect" id="node4" href="$entry_8c.html" title="entry c" alt="" coords="228,184,427,225"/>
+<area shape="rect" id="node5" href="$malloc_8c.html" title="malloc c" alt="" coords="5,184,204,225"/>
 <area shape="rect" id="node7" href="$stdio_8c.html" title=" " alt="" coords="673,184,872,225"/>
-<area shape="rect" id="node8" href="$test_8cpp.html" title=" " alt="" coords="896,184,1095,225"/>
-<area shape="rect" id="node10" href="$iostream_8cpp.html" title=" " alt="" coords="1119,184,1317,225"/>
-<area shape="rect" id="node11" href="$string_8c.html" title=" " alt="" coords="1341,184,1540,225"/>
+<area shape="rect" id="node8" href="$test_8cpp.html" title="test cpp" alt="" coords="896,184,1095,225"/>
+<area shape="rect" id="node10" href="$iostream_8cpp.html" title="iostream cpp" alt="" coords="1119,184,1317,225"/>
+<area shape="rect" id="node11" href="$string_8c.html" title="string c" alt="" coords="1341,184,1540,225"/>
 </map>

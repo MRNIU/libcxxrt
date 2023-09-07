@@ -87,77 +87,72 @@ $(document).ready(function(){initNavTree('string_8cpp_source.html',''); initResi
 </div><!--header-->
 <div class="contents">
 <a href="string_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// This file is a part of MRNIU/MiniCRT</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// (https://github.com/MRNIU/MiniCRT).</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// string.cpp for MRNIU/MiniCRT.</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="string_8h.html">string.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="stdint_8h.html">stdint.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;string&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacestd.html">std</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;string::string(<span class="keyword">const</span> <span class="keywordtype">char</span> *str) : len(0), pbuf(0) {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  *<span class="keyword">this</span> = str;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;string::string(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;s) : len(0), pbuf(0) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  *<span class="keyword">this</span> = s;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;string::~string(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">if</span> (pbuf != <a class="code" href="stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">delete</span>[] pbuf;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    pbuf = 0;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">string</span> &amp;string::operator=(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;s) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">if</span> (&amp;s == <span class="keyword">this</span>) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  this-&gt;~string();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  len = s.len;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  pbuf = <a class="code" href="string_8h.html#a7a82515b5d377be04817715c5465b647">strcpy</a>(<span class="keyword">new</span> <span class="keywordtype">char</span>[len + 1], s.pbuf);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="string_8h.html">string.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="stdint_8h.html">stdint.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;string&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacestd.html">std</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;string::string(<span class="keyword">const</span> <span class="keywordtype">char</span> *str) : len(0), pbuf(0) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  *<span class="keyword">this</span> = str;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;string::string(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;s) : len(0), pbuf(0) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  *<span class="keyword">this</span> = s;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;string::~string(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">if</span> (pbuf != <a class="code" href="stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">delete</span>[] pbuf;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    pbuf = 0;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">string</span> &amp;string::operator=(<span class="keyword">const</span> <span class="keywordtype">char</span> *s) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  this-&gt;~string();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  len = <a class="code" href="string_8h.html#a7558b0227f4e0bd3cb2e399eea48183e">strlen</a>(s);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  pbuf = <a class="code" href="string_8h.html#a7a82515b5d377be04817715c5465b647">strcpy</a>(<span class="keyword">new</span> <span class="keywordtype">char</span>[len + 1], s);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> &amp;string::operator[](<span class="keywordtype">size_t</span> idx)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pbuf[idx]; }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">char</span> &amp;string::operator[](<span class="keywordtype">size_t</span> idx) { <span class="keywordflow">return</span> pbuf[idx]; }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *string::c_str(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pbuf; }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">size_t</span> string::length(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> len; }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">size_t</span> string::size(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> len; }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">string</span> &amp;string::operator=(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;s) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">if</span> (&amp;s == <span class="keyword">this</span>) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  this-&gt;~string();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  len = s.len;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  pbuf = <a class="code" href="string_8h.html#a7a82515b5d377be04817715c5465b647">strcpy</a>(<span class="keyword">new</span> <span class="keywordtype">char</span>[len + 1], s.pbuf);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">string</span> &amp;string::operator=(<span class="keyword">const</span> <span class="keywordtype">char</span> *s) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  this-&gt;~string();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  len = <a class="code" href="string_8h.html#a7558b0227f4e0bd3cb2e399eea48183e">strlen</a>(s);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  pbuf = <a class="code" href="string_8h.html#a7a82515b5d377be04817715c5465b647">strcpy</a>(<span class="keyword">new</span> <span class="keywordtype">char</span>[len + 1], s);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="namespacestd.html#a8455c2a7870ae9d0e3a362b770ebf266">   57</a></span>&#160;ofstream &amp;<a class="code" href="namespacestd.html#a8455c2a7870ae9d0e3a362b770ebf266">operator&lt;&lt;</a>(ofstream &amp;o, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;s) { <span class="keywordflow">return</span> o &lt;&lt; s.c_str(); }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}; <span class="comment">// namespace std</span></div>
-<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="iostream_8cpp_source.html#l00015">iostream.cpp:15</a></div></div>
-<div class="ttc" id="anamespacestd_html_a8455c2a7870ae9d0e3a362b770ebf266"><div class="ttname"><a href="namespacestd.html#a8455c2a7870ae9d0e3a362b770ebf266">std::operator&lt;&lt;</a></div><div class="ttdeci">ofstream &amp; operator&lt;&lt;(ofstream &amp;o, const string &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="string_8cpp_source.html#l00057">string.cpp:57</a></div></div>
-<div class="ttc" id="astddef_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="stddef_8h_source.html#l00015">stddef.h:15</a></div></div>
-<div class="ttc" id="astdint_8h_html"><div class="ttname"><a href="stdint_8h.html">stdint.h</a></div></div>
-<div class="ttc" id="astring_8h_html"><div class="ttname"><a href="string_8h.html">string.h</a></div></div>
-<div class="ttc" id="astring_8h_html_a7558b0227f4e0bd3cb2e399eea48183e"><div class="ttname"><a href="string_8h.html#a7558b0227f4e0bd3cb2e399eea48183e">strlen</a></div><div class="ttdeci">uint64_t strlen(const char *str)</div><div class="ttdef"><b>Definition:</b> <a href="string_8c_source.html#l00015">string.c:15</a></div></div>
-<div class="ttc" id="astring_8h_html_a7a82515b5d377be04817715c5465b647"><div class="ttname"><a href="string_8h.html#a7a82515b5d377be04817715c5465b647">strcpy</a></div><div class="ttdeci">char * strcpy(char *dest, const char *src)</div><div class="ttdef"><b>Definition:</b> <a href="string_8c_source.html#l00036">string.c:36</a></div></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> &amp;string::operator[](<span class="keywordtype">size_t</span> idx)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pbuf[idx]; }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">char</span> &amp;string::operator[](<span class="keywordtype">size_t</span> idx) { <span class="keywordflow">return</span> pbuf[idx]; }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> *string::c_str(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pbuf; }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">size_t</span> string::length(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> len; }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">size_t</span> string::size(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> len; }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="namespacestd.html#a8455c2a7870ae9d0e3a362b770ebf266">   67</a></span>&#160;ofstream &amp;<a class="code" href="namespacestd.html#a8455c2a7870ae9d0e3a362b770ebf266">operator&lt;&lt;</a>(ofstream &amp;o, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;s) { <span class="keywordflow">return</span> o &lt;&lt; s.c_str(); }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}; <span class="comment">// namespace std</span></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="iostream_8cpp_source.html#l00025">iostream.cpp:25</a></div></div>
+<div class="ttc" id="anamespacestd_html_a8455c2a7870ae9d0e3a362b770ebf266"><div class="ttname"><a href="namespacestd.html#a8455c2a7870ae9d0e3a362b770ebf266">std::operator&lt;&lt;</a></div><div class="ttdeci">ofstream &amp; operator&lt;&lt;(ofstream &amp;o, const string &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="string_8cpp_source.html#l00067">string.cpp:67</a></div></div>
+<div class="ttc" id="astddef_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="stddef_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="stddef_8h_source.html#l00025">stddef.h:25</a></div></div>
+<div class="ttc" id="astdint_8h_html"><div class="ttname"><a href="stdint_8h.html">stdint.h</a></div><div class="ttdoc">stdint header</div></div>
+<div class="ttc" id="astring_8h_html"><div class="ttname"><a href="string_8h.html">string.h</a></div><div class="ttdoc">string header</div></div>
+<div class="ttc" id="astring_8h_html_a7558b0227f4e0bd3cb2e399eea48183e"><div class="ttname"><a href="string_8h.html#a7558b0227f4e0bd3cb2e399eea48183e">strlen</a></div><div class="ttdeci">uint64_t strlen(const char *str)</div><div class="ttdef"><b>Definition:</b> <a href="string_8c_source.html#l00025">string.c:25</a></div></div>
+<div class="ttc" id="astring_8h_html_a7a82515b5d377be04817715c5465b647"><div class="ttname"><a href="string_8h.html#a7a82515b5d377be04817715c5465b647">strcpy</a></div><div class="ttdeci">char * strcpy(char *dest, const char *src)</div><div class="ttdef"><b>Definition:</b> <a href="string_8c_source.html#l00046">string.c:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="string_8cpp.html">string.cpp</a></li>
-    <li class="footer">Generated on Thu Sep 7 2023 14:56:16 for libcxxrt by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Sep 7 2023 15:17:42 for libcxxrt by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

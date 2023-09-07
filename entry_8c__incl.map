@@ -1,8 +1,8 @@
 <map id="/home/runner/work/libcxxrt/libcxxrt/src/entry.c" name="/home/runner/work/libcxxrt/libcxxrt/src/entry.c">
-<area shape="rect" id="node1" title=" " alt="" coords="94,5,293,47"/>
-<area shape="rect" id="node2" href="$minicrt_8h.html" title=" " alt="" coords="5,95,85,121"/>
-<area shape="rect" id="node4" href="$stddef_8h.html" title=" " alt="" coords="109,95,184,121"/>
-<area shape="rect" id="node5" href="$stdio_8h.html" title=" " alt="" coords="208,95,275,121"/>
-<area shape="rect" id="node6" href="$unistd_8h.html" title=" " alt="" coords="299,95,373,121"/>
-<area shape="rect" id="node3" href="$stdint_8h.html" title=" " alt="" coords="107,169,178,196"/>
+<area shape="rect" id="node1" title="entry c" alt="" coords="97,5,295,47"/>
+<area shape="rect" id="node2" href="$libcxxrt_8h.html" title=" " alt="" coords="5,95,88,121"/>
+<area shape="rect" id="node4" href="$stddef_8h.html" title="stddef header" alt="" coords="112,95,187,121"/>
+<area shape="rect" id="node5" href="$stdio_8h.html" title="stdio header" alt="" coords="211,95,277,121"/>
+<area shape="rect" id="node6" href="$unistd_8h.html" title="unistd header" alt="" coords="301,95,376,121"/>
+<area shape="rect" id="node3" href="$stdint_8h.html" title="stdint header" alt="" coords="110,169,181,196"/>
 </map>

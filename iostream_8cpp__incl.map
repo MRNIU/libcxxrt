@@ -1,7 +1,7 @@
 <map id="/home/runner/work/libcxxrt/libcxxrt/src/iostream.cpp" name="/home/runner/work/libcxxrt/libcxxrt/src/iostream.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="47,5,246,47"/>
+<area shape="rect" id="node1" title="iostream cpp" alt="" coords="47,5,246,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,95,85,121"/>
-<area shape="rect" id="node3" href="$stddef_8h.html" title=" " alt="" coords="109,95,184,121"/>
-<area shape="rect" id="node4" href="$string_8h.html" title=" " alt="" coords="209,95,279,121"/>
-<area shape="rect" id="node5" href="$stdint_8h.html" title=" " alt="" coords="209,169,279,196"/>
+<area shape="rect" id="node3" href="$stddef_8h.html" title="stddef header" alt="" coords="109,95,184,121"/>
+<area shape="rect" id="node4" href="$string_8h.html" title="string header" alt="" coords="209,95,279,121"/>
+<area shape="rect" id="node5" href="$stdint_8h.html" title="stdint header" alt="" coords="209,169,279,196"/>
 </map>

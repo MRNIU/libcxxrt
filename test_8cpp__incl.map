@@ -1,9 +1,9 @@
 <map id="/home/runner/work/libcxxrt/libcxxrt/src/test.cpp" name="/home/runner/work/libcxxrt/libcxxrt/src/test.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="137,5,335,47"/>
+<area shape="rect" id="node1" title="test cpp" alt="" coords="137,5,335,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,95,85,121"/>
-<area shape="rect" id="node3" href="$stdio_8h.html" title=" " alt="" coords="109,95,176,121"/>
-<area shape="rect" id="node5" href="$stdlib_8h.html" title=" " alt="" coords="201,95,271,121"/>
+<area shape="rect" id="node3" href="$stdio_8h.html" title="stdio header" alt="" coords="109,95,176,121"/>
+<area shape="rect" id="node5" href="$stdlib_8h.html" title="stdlib header" alt="" coords="201,95,271,121"/>
 <area shape="rect" id="node6" title=" " alt="" coords="296,95,355,121"/>
-<area shape="rect" id="node7" href="$string_8h.html" title=" " alt="" coords="379,95,450,121"/>
-<area shape="rect" id="node4" href="$stdint_8h.html" title=" " alt="" coords="243,169,314,196"/>
+<area shape="rect" id="node7" href="$string_8h.html" title="string header" alt="" coords="379,95,450,121"/>
+<area shape="rect" id="node4" href="$stdint_8h.html" title="stdint header" alt="" coords="243,169,314,196"/>
 </map>

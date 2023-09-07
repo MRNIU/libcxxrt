@@ -87,55 +87,50 @@ $(document).ready(function(){initNavTree('stdlib_8h_source.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 <a href="stdlib_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// This file is a part of MRNIU/MiniCRT</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// (https://github.com/MRNIU/MiniCRT).</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// stdlib.h for MRNIU/MiniCRT.</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef __STDLIB_H__</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define __STDLIB_H__</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifndef NULL</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="stdlib_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">   15</a></span>&#160;<span class="preprocessor">#define NULL ((void *)0)</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef size_t</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#if defined(__i386__)</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size_t;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#elif defined(__x86_64__)</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> size_t;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="stdlib_8h.html#afbedc913aa4651b3c3b4b3aecd9b4711">free</a>(<span class="keywordtype">void</span> *ptr);</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="stdlib_8h.html#a7ac38fce3243a7dcf448301ee9ffd392">   27</a></span>&#160;<span class="keywordtype">void</span> *<a class="code" href="stdlib_8h.html#a7ac38fce3243a7dcf448301ee9ffd392">malloc</a>(<span class="keywordtype">size_t</span> size);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="stdlib_8h.html#a2a5337b60936e738e272601b4b24129d">itoa</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">char</span> *str, <span class="keywordtype">int</span> radix);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="stdlib_8h.html#ae7cd0046564cf34b564d6e44cbaae2ee">   31</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="stdlib_8h.html#ae7cd0046564cf34b564d6e44cbaae2ee">atexit_func_t</a>)(void);</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="stdlib_8h.html#a23d264f0fe4d67406c419e1b40fa30f8">   32</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="stdlib_8h.html#a23d264f0fe4d67406c419e1b40fa30f8">atexit</a>(<a class="code" href="stdlib_8h.html#ae7cd0046564cf34b564d6e44cbaae2ee">atexit_func_t</a> func);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __STDLIB_H__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef LIBCXXRT_STDLIB_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define LIBCXXRT_STDLIB_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifndef NULL</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="stdlib_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">   25</a></span>&#160;<span class="preprocessor">#define NULL ((void *)0)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifndef size_t</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#if defined(__i386__)</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size_t;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#elif defined(__x86_64__)</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> size_t;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> <a class="code" href="stdlib_8h.html#afbedc913aa4651b3c3b4b3aecd9b4711">free</a>(<span class="keywordtype">void</span> *ptr);</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="stdlib_8h.html#a7ac38fce3243a7dcf448301ee9ffd392">   37</a></span>&#160;<span class="keywordtype">void</span> *<a class="code" href="stdlib_8h.html#a7ac38fce3243a7dcf448301ee9ffd392">malloc</a>(<span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">char</span> *<a class="code" href="stdlib_8h.html#a2a5337b60936e738e272601b4b24129d">itoa</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">char</span> *str, <span class="keywordtype">int</span> radix);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="stdlib_8h.html#ae7cd0046564cf34b564d6e44cbaae2ee">   41</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="stdlib_8h.html#ae7cd0046564cf34b564d6e44cbaae2ee">atexit_func_t</a>)(void);</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="stdlib_8h.html#a23d264f0fe4d67406c419e1b40fa30f8">   42</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="stdlib_8h.html#a23d264f0fe4d67406c419e1b40fa30f8">atexit</a>(<a class="code" href="stdlib_8h.html#ae7cd0046564cf34b564d6e44cbaae2ee">atexit_func_t</a> func);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* LIBCXXRT_STDLIB_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="astdlib_8h_html_a23d264f0fe4d67406c419e1b40fa30f8"><div class="ttname"><a href="stdlib_8h.html#a23d264f0fe4d67406c419e1b40fa30f8">atexit</a></div><div class="ttdeci">int atexit(atexit_func_t func)</div></div>
-<div class="ttc" id="astdlib_8h_html_a2a5337b60936e738e272601b4b24129d"><div class="ttname"><a href="stdlib_8h.html#a2a5337b60936e738e272601b4b24129d">itoa</a></div><div class="ttdeci">char * itoa(int n, char *str, int radix)</div><div class="ttdef"><b>Definition:</b> <a href="string_8c_source.html#l00084">string.c:84</a></div></div>
+<div class="ttc" id="astdlib_8h_html_a2a5337b60936e738e272601b4b24129d"><div class="ttname"><a href="stdlib_8h.html#a2a5337b60936e738e272601b4b24129d">itoa</a></div><div class="ttdeci">char * itoa(int n, char *str, int radix)</div><div class="ttdef"><b>Definition:</b> <a href="string_8c_source.html#l00094">string.c:94</a></div></div>
 <div class="ttc" id="astdlib_8h_html_a7ac38fce3243a7dcf448301ee9ffd392"><div class="ttname"><a href="stdlib_8h.html#a7ac38fce3243a7dcf448301ee9ffd392">malloc</a></div><div class="ttdeci">void * malloc(size_t size)</div></div>
-<div class="ttc" id="astdlib_8h_html_ae7cd0046564cf34b564d6e44cbaae2ee"><div class="ttname"><a href="stdlib_8h.html#ae7cd0046564cf34b564d6e44cbaae2ee">atexit_func_t</a></div><div class="ttdeci">void(* atexit_func_t)(void)</div><div class="ttdef"><b>Definition:</b> <a href="stdlib_8h_source.html#l00031">stdlib.h:31</a></div></div>
-<div class="ttc" id="astdlib_8h_html_afbedc913aa4651b3c3b4b3aecd9b4711"><div class="ttname"><a href="stdlib_8h.html#afbedc913aa4651b3c3b4b3aecd9b4711">free</a></div><div class="ttdeci">void free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="malloc_8c_source.html#l00033">malloc.c:33</a></div></div>
+<div class="ttc" id="astdlib_8h_html_ae7cd0046564cf34b564d6e44cbaae2ee"><div class="ttname"><a href="stdlib_8h.html#ae7cd0046564cf34b564d6e44cbaae2ee">atexit_func_t</a></div><div class="ttdeci">void(* atexit_func_t)(void)</div><div class="ttdef"><b>Definition:</b> <a href="stdlib_8h_source.html#l00041">stdlib.h:41</a></div></div>
+<div class="ttc" id="astdlib_8h_html_afbedc913aa4651b3c3b4b3aecd9b4711"><div class="ttname"><a href="stdlib_8h.html#afbedc913aa4651b3c3b4b3aecd9b4711">free</a></div><div class="ttdeci">void free(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="malloc_8c_source.html#l00043">malloc.c:43</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="stdlib_8h.html">stdlib.h</a></li>
-    <li class="footer">Generated on Thu Sep 7 2023 14:56:16 for libcxxrt by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Sep 7 2023 15:17:42 for libcxxrt by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

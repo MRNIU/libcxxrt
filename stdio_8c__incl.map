@@ -1,7 +1,7 @@
 <map id="/home/runner/work/libcxxrt/libcxxrt/src/stdio.c" name="/home/runner/work/libcxxrt/libcxxrt/src/stdio.c">
 <area shape="rect" id="node1" title=" " alt="" coords="33,5,231,47"/>
-<area shape="rect" id="node2" href="$stdio_8h.html" title=" " alt="" coords="5,95,72,121"/>
-<area shape="rect" id="node4" href="$string_8h.html" title=" " alt="" coords="97,95,167,121"/>
-<area shape="rect" id="node5" href="$unistd_8h.html" title=" " alt="" coords="192,95,267,121"/>
-<area shape="rect" id="node3" href="$stdint_8h.html" title=" " alt="" coords="50,169,121,196"/>
+<area shape="rect" id="node2" href="$stdio_8h.html" title="stdio header" alt="" coords="5,95,72,121"/>
+<area shape="rect" id="node4" href="$string_8h.html" title="string header" alt="" coords="97,95,167,121"/>
+<area shape="rect" id="node5" href="$unistd_8h.html" title="unistd header" alt="" coords="192,95,267,121"/>
+<area shape="rect" id="node3" href="$stdint_8h.html" title="stdint header" alt="" coords="50,169,121,196"/>
 </map>
