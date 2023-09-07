@@ -14,8 +14,8 @@
  * </table>
  */
 
-#ifndef __STDIO_H__
-#define __STDIO_H__
+#ifndef LIBCXXRT_STDIO_H
+#define LIBCXXRT_STDIO_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -51,4 +51,4 @@ int fprintf(FILE *stream, const char *format, ...);
 }
 #endif
 
-#endif /* __STDIO_H__ */
+#endif /* LIBCXXRT_STDIO_H */

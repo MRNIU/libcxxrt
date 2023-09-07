@@ -13,8 +13,8 @@
  * <tr><td>2023-09-07<td>Zone.N<td>迁移到 doxygen
  * </table>
  */
-#ifndef __PORT_H__
-#define __PORT_H__
+#ifndef LIBCXXRT_PORT_H
+#define LIBCXXRT_PORT_H
 
 #ifdef WIN32
 #define UNUSED(x)
@@ -23,4 +23,4 @@
 #define FALLTHROUHT __attribute__((fallthrough))
 #endif
 
-#endif /* __PORT_H__ */
+#endif /* LIBCXXRT_PORT_H */

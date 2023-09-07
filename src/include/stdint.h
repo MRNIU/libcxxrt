@@ -14,8 +14,8 @@
  * </table>
  */
 
-#ifndef __STDINT_H__
-#define __STDINT_H__
+#ifndef LIBCXXRT_STDINT_H
+#define LIBCXXRT_STDINT_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -35,4 +35,4 @@ typedef unsigned long long uint64_t;
 }
 #endif
 
-#endif /* __STDINT_H__ */
+#endif /* LIBCXXRT_STDINT_H */

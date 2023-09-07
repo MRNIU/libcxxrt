@@ -14,8 +14,8 @@
  * </table>
  */
 
-#ifndef __STDLIB_H__
-#define __STDLIB_H__
+#ifndef LIBCXXRT_STDLIB_H
+#define LIBCXXRT_STDLIB_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -45,4 +45,4 @@ int atexit(atexit_func_t func);
 }
 #endif
 
-#endif /* __STDLIB_H__ */
+#endif /* LIBCXXRT_STDLIB_H */

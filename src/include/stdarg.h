@@ -14,8 +14,8 @@
  * </table>
  */
 
-#ifndef __STDARG_H__
-#define __STDARG_H__
+#ifndef LIBCXXRT_STDARG_H
+#define LIBCXXRT_STDARG_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -46,4 +46,4 @@ typedef char *va_list;
 }
 #endif
 
-#endif /* __STDARG_H__ */
+#endif /* LIBCXXRT_STDARG_H */

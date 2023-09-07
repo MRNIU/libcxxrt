@@ -14,8 +14,8 @@
  * </table>
  */
 
-#ifndef __STDDEF_H__
-#define __STDDEF_H__
+#ifndef LIBCXXRT_STDDEF_H
+#define LIBCXXRT_STDDEF_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -37,4 +37,4 @@ typedef unsigned long size_t;
 }
 #endif
 
-#endif /* __STDDEF_H__ */
+#endif /* LIBCXXRT_STDDEF_H */

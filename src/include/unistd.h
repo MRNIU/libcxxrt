@@ -14,8 +14,8 @@
  * </table>
  */
 
-#ifndef __UNISTD_H__
-#define __UNISTD_H__
+#ifndef LIBCXXRT_UNISTD_H
+#define LIBCXXRT_UNISTD_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -83,4 +83,4 @@ extern "C" {
 }
 #endif
 
-#endif /* __UNISTD_H__ */
+#endif /* LIBCXXRT_UNISTD_H */

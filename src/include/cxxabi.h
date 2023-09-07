@@ -14,8 +14,8 @@
  * </table>
  */
 
-#ifndef _CXXABI_H_
-#define _CXXABI_H_
+#ifndef LIBCXXRT_CXXABI_H
+#define LIBCXXRT_CXXABI_H
 
 // See https://gcc.gnu.org/onlinedocs/gccint/Initialization.html for more info
 
@@ -80,4 +80,4 @@ constructor_func ctors_end[1]
 }
 #endif
 
-#endif /* _CXXABI_H_ */
+#endif /* LIBCXXRT_CXXABI_H */

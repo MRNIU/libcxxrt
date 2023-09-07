@@ -14,8 +14,8 @@
  * </table>
  */
 
-#ifndef __STRING_H__
-#define __STRING_H__
+#ifndef LIBCXXRT_STRING_H
+#define LIBCXXRT_STRING_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,4 +33,4 @@ void bzero(void *dest, uint32_t len);
 }
 #endif
 
-#endif /* __STRING_H__ */
+#endif /* LIBCXXRT_STRING_H */

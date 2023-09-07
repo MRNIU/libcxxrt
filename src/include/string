@@ -14,8 +14,8 @@
  * </table>
  */
 
-#ifndef __STRING__
-#define __STRING__
+#ifndef LIBCXXRT_STRING
+#define LIBCXXRT_STRING
 
 #include "iostream"
 #include "stddef.h"
@@ -42,4 +42,4 @@ public:
 ofstream &operator<<(ofstream &o, const string &s);
 }; // namespace std
 
-#endif /* __STRING__ */
+#endif /* LIBCXXRT_STRING */

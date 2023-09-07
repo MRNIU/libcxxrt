@@ -14,8 +14,8 @@
  * </table>
  */
 
-#ifndef __MINICRT_H__
-#define __MINICRT_H__
+#ifndef LIBCXXRT_LIBCXXRT_H
+#define LIBCXXRT_LIBCXXRT_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,6 +23,7 @@ extern "C" {
 
 #include "stdint.h"
 
+/// @todo 改名
 int mini_crt_io_init();
 int32_t mini_crt_heap_init();
 
@@ -34,4 +35,4 @@ void mini_crt_call_exit_routine();
 }
 #endif
 
-#endif /* __MINICRT_H__ */
+#endif /* LIBCXXRT_LIBCXXRT_H */

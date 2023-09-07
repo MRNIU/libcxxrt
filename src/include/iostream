@@ -14,8 +14,8 @@
  * </table>
  */
 
-#ifndef __IOSTREAM__
-#define __IOSTREAM__
+#ifndef LIBCXXRT_IOSTREAM
+#define LIBCXXRT_IOSTREAM
 
 #include "stdint.h"
 #include "stdio.h"
@@ -63,4 +63,4 @@ public:
 extern stdout_stream cout;
 }; // namespace std
 
-#endif /* __IOSTREAM__ */
+#endif /* LIBCXXRT_IOSTREAM */
