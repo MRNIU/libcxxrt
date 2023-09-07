@@ -155,14 +155,14 @@ add_custom_target(clang-format
 
 # genhtml 生成测试覆盖率报告网页
 find_program(GENHTML_EXE genhtml)
-if(NOT GENHTML_EXE)
+if (NOT GENHTML_EXE)
     message(FATAL_ERROR "genhtml not found.\n"
-        "Following https://github.com/linux-test-project/lcov to install.")
-endif()
+            "Following https://github.com/linux-test-project/lcov to install.")
+endif ()
 
 # lcov 生成测试覆盖率报告
 find_program(LCOV_EXE lcov)
-if(NOT LCOV_EXE)
+if (NOT LCOV_EXE)
     message(FATAL_ERROR "lcov not found.\n"
-        "Following https://github.com/linux-test-project/lcov to install.")
-endif()
+            "Following https://github.com/linux-test-project/lcov to install.")
+endif ()

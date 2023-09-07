@@ -25,7 +25,7 @@ extern "C" {
 #define PROT_WRITE 0x2
 #define MAP_ANON 0x20
 #define MAP_PRIVATE 0x2
-#define MAP_FAILED ((void*)-1)
+#define MAP_FAILED ((void *)-1)
 
 #define O_RDONLY 00000000
 #define O_WRONLY 00000001

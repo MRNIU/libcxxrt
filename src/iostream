@@ -11,48 +11,46 @@
 #include "stdio.h"
 
 namespace std {
-    class ofstream {
-    private:
-    protected:
-        FILE *fp;
-        ofstream(const ofstream &lhs);
+class ofstream {
+private:
+protected:
+  FILE *fp;
+  ofstream(const ofstream &lhs);
 
-    public:
-        enum openmode : uint8_t {
-            in     = 1,
-            out    = 2,
-            binary = 4,
-            trunc  = 8,
-        };
+public:
+  enum openmode : uint8_t {
+    in = 1,
+    out = 2,
+    binary = 4,
+    trunc = 8,
+  };
 
-        ofstream(void);
-        explicit ofstream(const char *       filename,
-                          ofstream::openmode md = ofstream::out);
-        ~ofstream(void);
-        ofstream &operator<<(char c);
-        ofstream &operator<<(int n);
-        ofstream &operator<<(const char *lhs);
-        ofstream &operator<<(ofstream &(*)(ofstream &));
+  ofstream(void);
+  explicit ofstream(const char *filename,
+                    ofstream::openmode md = ofstream::out);
+  ~ofstream(void);
+  ofstream &operator<<(char c);
+  ofstream &operator<<(int n);
+  ofstream &operator<<(const char *lhs);
+  ofstream &operator<<(ofstream &(*)(ofstream &));
 
-        void open(const char *filename, ofstream::openmode md = ofstream::out);
-        void close(void);
-        ofstream &write(const char *buf, unsigned size);
-    };
-
-    inline ofstream &endl(ofstream &lhs) {
-        return lhs << '\n';
-    }
-
-    class stdout_stream : public ofstream {
-    private:
-    protected:
-    public:
-        stdout_stream(void);
-        stdout_stream(const stdout_stream &s);
-        ~stdout_stream(void);
-    };
-
-    extern stdout_stream cout;
+  void open(const char *filename, ofstream::openmode md = ofstream::out);
+  void close(void);
+  ofstream &write(const char *buf, unsigned size);
 };
+
+inline ofstream &endl(ofstream &lhs) { return lhs << '\n'; }
+
+class stdout_stream : public ofstream {
+private:
+protected:
+public:
+  stdout_stream(void);
+  stdout_stream(const stdout_stream &s);
+  ~stdout_stream(void);
+};
+
+extern stdout_stream cout;
+}; // namespace std
 
 #endif /* __IOSTREAM__ */

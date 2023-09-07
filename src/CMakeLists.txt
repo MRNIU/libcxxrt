@@ -7,30 +7,30 @@
 enable_language(C)
 enable_language(CXX)
 
-set(SOURCE 
-    entry.c
-    format.c
-    malloc.c
-    stdio.c
-    string.c
-    cxxabi.cpp
-    new_delete.cpp
-    string.cpp
-    iostream.cpp
+set(SOURCE
+        entry.c
+        format.c
+        malloc.c
+        stdio.c
+        string.c
+        cxxabi.cpp
+        new_delete.cpp
+        string.cpp
+        iostream.cpp
 )
 
-add_library(cxxrt-static STATIC 
-    ${SOURCE}
+add_library(cxxrt-static STATIC
+        ${SOURCE}
 )
 
 target_compile_options(cxxrt-static PRIVATE
-    ${COMMON_COMPILE_OPTIONS}
+        ${COMMON_COMPILE_OPTIONS}
 )
 target_link_options(cxxrt-static PRIVATE
-    ${COMMON_LINK_OPTIONS}
+        ${COMMON_LINK_OPTIONS}
 )
 target_include_directories(cxxrt-static PRIVATE
-    ${CMAKE_CURRENT_LIST_DIR}/include
+        ${CMAKE_CURRENT_LIST_DIR}/include
 )
 
 # add_library(cxxrt-shared SHARED 

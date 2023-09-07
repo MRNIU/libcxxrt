@@ -4,37 +4,33 @@
 //
 // new_delete.cpp for MRNIU/MiniCRT.
 
-#include "stdlib.h"
 #include "port.h"
+#include "stdlib.h"
 
-void *operator new(size_t size) {
-    return malloc(size);
-}
+void *operator new(size_t size) { return malloc(size); }
 
-void *operator new[](size_t size) {
-    return malloc(size);
-}
+void *operator new[](size_t size) { return malloc(size); }
 
 void operator delete(void *p) {
-    if (p != NULL) {
-        free(p);
-    }
+  if (p != NULL) {
+    free(p);
+  }
 }
 
 void operator delete[](void *p) {
-    if (p != NULL) {
-        free(p);
-    }
+  if (p != NULL) {
+    free(p);
+  }
 }
 
 void operator delete(void *p, size_t UNUSED(size)) {
-    if (p != NULL) {
-        free(p);
-    }
+  if (p != NULL) {
+    free(p);
+  }
 }
 
 void operator delete[](void *p, size_t UNUSED(size)) {
-    if (p != NULL) {
-        free(p);
-    }
+  if (p != NULL) {
+    free(p);
+  }
 }

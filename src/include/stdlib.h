@@ -23,7 +23,7 @@ typedef unsigned long size_t;
 #endif
 #endif
 
-void  free(void *ptr);
+void free(void *ptr);
 void *malloc(size_t size);
 
 char *itoa(int n, char *str, int radix);

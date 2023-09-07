@@ -26,7 +26,7 @@ typedef int FILE;
 #define stderr ((FILE *)2)
 #endif
 
-FILE *  fopen(const char *filename, const char *mode);
+FILE *fopen(const char *filename, const char *mode);
 int64_t fread(void *buffer, uint64_t size, uint64_t count, FILE *stream);
 int64_t fwrite(const void *buffer, uint64_t size, uint64_t count, FILE *stream);
 int64_t fclose(FILE *fp);

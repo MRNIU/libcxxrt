@@ -27,7 +27,7 @@ list(APPEND COMMON_TEST_LINK_OPTIONS
 list(APPEND COMMON_TEST_LINK_LIB
         gtest_main
 )
-            
+
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/unit_test)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/integration_test)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/system_test)

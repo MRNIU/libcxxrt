@@ -13,7 +13,7 @@ extern "C" {
 
 #include "stdint.h"
 
-int     mini_crt_io_init();
+int mini_crt_io_init();
 int32_t mini_crt_heap_init();
 
 // internal

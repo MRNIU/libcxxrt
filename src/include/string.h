@@ -13,11 +13,11 @@ extern "C" {
 
 #include "stdint.h"
 
-int8_t   strcmp(const char *src, const char *dst);
-char *   strcpy(char *dest, const char *src);
+int8_t strcmp(const char *src, const char *dst);
+char *strcpy(char *dest, const char *src);
 uint64_t strlen(const char *str);
-void     memset(void *dest, uint8_t val, uint32_t len);
-void     bzero(void *dest, uint32_t len);
+void memset(void *dest, uint8_t val, uint32_t len);
+void bzero(void *dest, uint32_t len);
 
 #ifdef __cplusplus
 }
