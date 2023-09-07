@@ -1,0 +1,22 @@
+
+# This file is a part of MRNIU/libcxxrt
+# (https://github.com/MRNIU/libcxxrt).
+#
+# .clang-tidy for MRNIU/libcxxrt.
+
+---
+Checks: '-*,\
+  bugprone-*,\
+  clang-analyzer-*,\
+  cppcoreguidelines-*,\
+  hicpp-*,\
+  llvm-*,\
+  misc-*
+  modernize-*,\
+  performance-*,\
+  portability-*,\
+  readability-*,\
+  -cppcoreguidelines-pro-type-reinterpret-cast'
+HeaderFilterRegex: '^${sourceDir}/src'
+AnalyzeTemporaryDtors: true
+...

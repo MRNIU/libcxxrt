@@ -1,7 +1,52 @@
 
-# This file is a part of MRNIU/MiniCRT (https://github.com/MRNIU/MiniCRT).
+# This file is a part of MRNIU/libcxxrt
+# (https://github.com/MRNIU/libcxxrt).
 #
-# .gitinnore for MRNIU/MiniCRT.
+# .gitignore for MRNIU/libcxxrt.
 
 .DS_Store
 build
+build_aarch64
+build_riscv64
+build_x86_64
+doc/html
+cmake-build*
+.gdbinit
+tools/opensbi/build
+.vscode
+.idea
+3rd
+Doxyfile
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
